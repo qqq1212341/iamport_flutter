@@ -59,6 +59,9 @@ class IamportPayment extends StatelessWidget {
               });
               location.href = "$redirectUrl" + "?" + query.join("&");
             });
+            var parent = document.getElementById("prdtArea");
+            var target = parent.getElementsByTagName("span")[0];
+            target.style.display = "none";
           ''');
         },
         customPGAction: (WebViewController controller) {
