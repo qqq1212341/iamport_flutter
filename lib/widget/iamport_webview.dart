@@ -95,12 +95,18 @@ class _IamportWebViewState extends State<IamportWebView> {
                 }
               },
               onPageFinished: (String url) {
+                _webViewController.evaluateJavascript('''
+                  var parent = document.getElementById("prdtArea");
+                  var target = parent.getElementsByTagName("span")[0];
+                  target.style.display = "none";
+                ''');
                 // 웹뷰 로딩 완료시에 화면 전환
                 if (_isWebviewLoaded == 1) {
                   setState(() {
                     _isWebviewLoaded = 0;
                   });
                 }
+
                 // 페이지 로딩 완료시 IMP 코드 실행
                 if (_isImpLoaded == 0) {
                   widget.executeJS(this._webViewController);
