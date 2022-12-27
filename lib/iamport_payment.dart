@@ -46,8 +46,8 @@ class IamportPayment extends StatelessWidget {
 
       return IamportWebView(
         type: ActionType.payment,
-        appBar: this.appBar,
-        initialChild: this.initialChild,
+        // appBar: this.appBar,
+        // initialChild: this.initialChild,
         gestureRecognizers: this.gestureRecognizers,
         executeJS: (WebViewController controller) {
           controller.evaluateJavascript('''
